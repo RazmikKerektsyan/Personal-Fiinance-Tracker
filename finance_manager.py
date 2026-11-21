@@ -86,7 +86,7 @@ class FinanceManager:
                 total_income += t.amount
             elif isinstance(t, Expense):
                 total_expense += t.amount
-        return {"total_income": total_income, "total_expense": total_expense}
+        return {"total_income": total_income, "total_expense": total_expense, "balance": total_income - total_expense}
 
     @validate_month
     def check_budget(self, month: str) -> list[dict]:
